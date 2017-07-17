@@ -30,6 +30,7 @@ public class CoverHeaderScrollBehavior extends CoordinatorLayout.Behavior<View> 
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) child.getLayoutParams();
         if(params!=null && params.height == CoordinatorLayout.LayoutParams.MATCH_PARENT){
             child.layout(0,0,parent.getWidth(),parent.getHeight());
+            //第一次这里是200dp
             child.setTranslationY(getHeaderHeight());
             return true;
         }
@@ -52,7 +53,7 @@ public class CoverHeaderScrollBehavior extends CoordinatorLayout.Behavior<View> 
 
         float transY =  child.getTranslationY() - dy;
         Log.i(TAG,"transY:"+transY+"++++child.getTranslationY():"+child.getTranslationY()+"---->dy:"+dy);
-        if(transY > 0){
+        if(transY > 0 && transY < getHeaderHeight()){
             child.setTranslationY(transY);
             consumed[1]= dy;
         }

@@ -79,6 +79,8 @@
              />
        </LinearLayout>
      </HorizontalScrollView>
+
+    <!--app:layout_scrollFlags="scroll" 添加之后会导致它也可以滑动 -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="45dp"

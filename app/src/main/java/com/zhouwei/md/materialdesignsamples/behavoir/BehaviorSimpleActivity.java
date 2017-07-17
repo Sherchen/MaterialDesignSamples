@@ -14,6 +14,7 @@ import com.zhouwei.md.materialdesignsamples.R;
  * Created by zhouwei on 16/12/13.
  */
 
+//删除效果，但是没有流畅的效果，recyclerview有这种
 public class BehaviorSimpleActivity extends AppCompatActivity {
     public static final String TAG = "BehaviorSimpleActivity";
     private View mSwipeLayout;

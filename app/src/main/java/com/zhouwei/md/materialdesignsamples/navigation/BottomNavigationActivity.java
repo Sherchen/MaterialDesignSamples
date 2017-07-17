@@ -10,7 +10,7 @@ import com.zhouwei.md.materialdesignsamples.R;
 /**
  * Created by zhouwei on 16/12/23.
  */
-
+//使用view来实现bottomsheet
 public class BottomNavigationActivity extends AppCompatActivity {
     private BottomNavigationView mBottomNavigationView;
     @Override

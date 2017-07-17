@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MaterialDesignSamples.iml" filepath="$PROJECT_DIR$/MaterialDesignSamples.iml" />
+      <module fileurl="file://D:\code\MaterialDesignSamples\MaterialDesignSamples.iml" filepath="D:\code\MaterialDesignSamples\MaterialDesignSamples.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\code\MaterialDesignSamples\app\app.iml" filepath="D:\code\MaterialDesignSamples\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/mdsimples/mdsimples.iml" filepath="$PROJECT_DIR$/mdsimples/mdsimples.iml" />
+      <module fileurl="file://D:\code\MaterialDesignSamples\mdsimples\mdsimples.iml" filepath="D:\code\MaterialDesignSamples\mdsimples\mdsimples.iml" />
     </modules>
   </component>
 </project>

@@ -40,7 +40,8 @@ public class HeaderScrollBehavior extends CoordinatorLayout.Behavior<View> {
      }
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
-        if(isDepend(dependency)){
+        boolean depend = isDepend(dependency);
+        if(depend){
             Log.i("zhouwei","isDeoendent : true");
             mDependencyView = new WeakReference<View>(dependency);
             return true;
@@ -48,6 +49,7 @@ public class HeaderScrollBehavior extends CoordinatorLayout.Behavior<View> {
 
         return false;
     }
+    //child是使用到的view, dependency是layoutDependsOn指定的
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
         Resources resources = getDependencyView().getResources();
@@ -77,6 +79,7 @@ public class HeaderScrollBehavior extends CoordinatorLayout.Behavior<View> {
         return super.onLayoutChild(parent, child, layoutDirection);
     }
 
+    //启动滚动，然后走两步onNestedPreScroll, onNestedScroll
     @Override
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, View child, View directTargetChild, View target, int nestedScrollAxes) {
         return (nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0;
@@ -123,6 +126,7 @@ public class HeaderScrollBehavior extends CoordinatorLayout.Behavior<View> {
         }
     }
 
+    //fling动作
    @Override
     public boolean onNestedPreFling(CoordinatorLayout coordinatorLayout, View child, View target, float velocityX, float velocityY) {
         return onUserStopDragging(velocityY);

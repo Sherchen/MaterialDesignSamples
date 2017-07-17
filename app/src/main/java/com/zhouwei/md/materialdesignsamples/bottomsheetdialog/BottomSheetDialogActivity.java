@@ -37,7 +37,7 @@ public class BottomSheetDialogActivity extends AppCompatActivity implements View
 
     private void initView(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.bottomsheetdialog);
+        toolbar.setTitle("");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         toolbar.inflateMenu(R.menu.menu_share);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -96,10 +96,9 @@ public class BottomSheetDialogActivity extends AppCompatActivity implements View
 
                 }
             });
-        }else{
-            mBottomSheetDialog.show();
         }
 
+        mBottomSheetDialog.show();
     }
 
     private void showBottomSheetDialog(){

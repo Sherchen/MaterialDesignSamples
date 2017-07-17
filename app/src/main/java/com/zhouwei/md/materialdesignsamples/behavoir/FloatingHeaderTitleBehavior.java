@@ -32,14 +32,17 @@ public class FloatingHeaderTitleBehavior extends CoordinatorLayout.Behavior<View
         mTitleInitY = context.getResources().getDimensionPixelOffset(R.dimen.title_init_y);
         mMargin = context.getResources().getDimensionPixelOffset(R.dimen.title_margin_left);
     }
+
+    //if return true,重新布局layout,以及发送onDependentViewChanged
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
-        return isDependent(dependency);
+        boolean dependent = isDependent(dependency);
+        return dependent;
     }
 
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
-
+        //第一次当dependency.getTranslationY()=0时，progress=1,translationY=100dp
         float progress = 1.0f - Math.abs(dependency.getTranslationY() / (dependency.getHeight() - getCollapsedHeight()));
 
         float translationY = (mTitleInitY - mTitleCollapsedHeight) * progress;
